@@ -22,6 +22,7 @@ function limpiarBtn(){
    wordMostrar.innerHTML = ' ';
    characterMostrar.innerHTML =' ';
    characterSinEspacioMostrar.innerHTML='';
+   numMostrar.innerHTML='';
 
   }
   //Llamar al objeto getWordCount
