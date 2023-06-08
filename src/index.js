@@ -10,6 +10,7 @@ const botonLimpiar = document.getElementById("reset-button");
 const wordMostrar = document.getElementById("palabras-Count");
 const characterMostrar = document.getElementById("caracteres-Count");
 const characterSinEspacioMostrar = document.getElementById("caracteres-Espacio");
+const numMostrar = document.getElementById("numeros-Count");
 
 
 //Limpiar el boton "reset-button"
@@ -20,6 +21,7 @@ function limpiarBtn(){
    textArea.value ='';
    wordMostrar.innerHTML = ' ';
    characterMostrar.innerHTML =' ';
+   characterSinEspacioMostrar.innerHTML='';
 
   }
   //Llamar al objeto getWordCount
@@ -55,15 +57,26 @@ function limpiarBtn(){
   }
 
   //Lamar al objeto getCharacterCountExcludingSpaces
-  const characterSpace = analyzer.getCharacterCountExcludingSpaces(text); 
-  if(countCharacter === 0){
+  const characterSpace = analyzer. getCharacterCountExcludingSpaces(text); 
+  if(characterSpace === 0){
 
     characterSinEspacioMostrar.innerHTML = characterSpace + " ";
-   
+    
   }
   else{
 
     characterSinEspacioMostrar.innerHTML = characterSpace + " ";
+  }
+//Llamar al elemento getNumberCount
+  const numberCount = analyzer. getNumberCount(text); 
+  if(numberCount=== 0){
+
+    numMostrar .innerHTML = numberCount + " ";
+    
+  }
+  else{
+
+    numMostrar .innerHTML = numberCount + " ";
   }
 
 
