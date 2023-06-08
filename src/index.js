@@ -7,10 +7,67 @@ import analyzer from './analyzer.js';
 
 const textArea = document.querySelector('textarea');
 const botonLimpiar = document.getElementById("reset-button");
+const wordMostrar = document.getElementById("palabras-Count");
+const characterMostrar = document.getElementById("caracteres-Count");
+const characterSinEspacioMostrar = document.getElementById("caracteres-Espacio");
+
+
+//Limpiar el boton "reset-button"
 botonLimpiar.addEventListener("click", limpiarBtn);
 
 function limpiarBtn(){
   console.log(textArea.value);
    textArea.value ='';
+   wordMostrar.innerHTML = ' ';
+   characterMostrar.innerHTML =' ';
 
   }
+  //Llamar al objeto getWordCount
+  textArea.addEventListener("keyup", function() {
+  
+  let text = this.value; 
+
+  console.log("texto");
+
+  const countWords = analyzer.getWordCount(text);
+
+  if(countWords === 0){
+
+    wordMostrar.innerHTML = countWords + " ";
+   
+  }
+  else{
+
+    wordMostrar.innerHTML = countWords + " ";
+  }
+
+
+  //Llamar al objeto getCharacterCount
+  const countCharacter = analyzer.getCharacterCount(text); 
+  if(countCharacter === 0){
+
+    characterMostrar.innerHTML = countCharacter + " ";
+   
+  }
+  else{
+
+    characterMostrar.innerHTML = countCharacter + " ";
+  }
+
+  //Lamar al objeto getCharacterCountExcludingSpaces
+  const characterSpace = analyzer.getCharacterCountExcludingSpaces(text); 
+  if(countCharacter === 0){
+
+    characterSinEspacioMostrar.innerHTML = characterSpace + " ";
+   
+  }
+  else{
+
+    characterSinEspacioMostrar.innerHTML = characterSpace + " ";
+  }
+
+
+});
+
+
+
