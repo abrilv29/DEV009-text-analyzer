@@ -11,6 +11,9 @@ const wordMostrar = document.getElementById("palabras-Count");
 const characterMostrar = document.getElementById("caracteres-Count");
 const characterSinEspacioMostrar = document.getElementById("caracteres-Espacio");
 const numMostrar = document.getElementById("numeros-Count");
+const sumMostrar = document.getElementById("numeros-Sumar");
+const wordLengthMostrar = document.getElementById("promedio");
+
 
 
 //Limpiar el boton "reset-button"
@@ -28,7 +31,7 @@ function limpiarBtn(){
   //Llamar al objeto getWordCount
   textArea.addEventListener("keyup", function() {
   
-  let text = this.value; 
+ const text = this.value; 
 
   console.log("texto");
 
@@ -68,6 +71,19 @@ function limpiarBtn(){
 
     characterSinEspacioMostrar.innerHTML = characterSpace + " ";
   }
+
+    //Lalmar al objeto getAverageWordLength
+  const lengthWords = analyzer.getAverageWordLength(text); 
+  if(lengthWords === 0){
+
+    wordLengthMostrar.innerHTML = lengthWords  + " ";
+    
+  }
+  else{
+
+    wordLengthMostrar.innerHTML = lengthWords  + " ";
+  }
+
 //Llamar al elemento getNumberCount
   const numberCount = analyzer. getNumberCount(text); 
   if(numberCount=== 0){
@@ -79,6 +95,20 @@ function limpiarBtn(){
 
     numMostrar .innerHTML = numberCount + " ";
   }
+
+  //Llamar al objeto getNumberCount
+  const sumNumber = analyzer.getNumberSum(text); 
+  if(sumNumber === 0){
+
+    sumMostrar.innerHTML = sumNumber  + " ";
+    
+  }
+  else{
+
+    sumMostrar.innerHTML = sumNumber  + " ";
+  }
+
+
 
 
 });
