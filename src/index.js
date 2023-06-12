@@ -19,93 +19,93 @@ const wordLengthMostrar = document.getElementById("promedio");
 //Limpiar el boton "reset-button"
 botonLimpiar.addEventListener("click", limpiarBtn);
 
-function limpiarBtn(){
+function limpiarBtn() {
   console.log(textArea.value);
-   textArea.value ='';
-   wordMostrar.innerHTML = ' ';
-   characterMostrar.innerHTML =' ';
-   characterSinEspacioMostrar.innerHTML='';
-   numMostrar.innerHTML='';
+  textArea.value = '';
+  wordMostrar.innerHTML = ' ';
+  characterMostrar.innerHTML = ' ';
+  characterSinEspacioMostrar.innerHTML = '';
+  numMostrar.innerHTML = '';
 
-  }
-  //Llamar al objeto getWordCount
-  textArea.addEventListener("keyup", function() {
-  
- const text = this.value; 
+}
+//Llamar al objeto getWordCount
+textArea.addEventListener("keyup", function () {
+
+  const text = this.value;
 
   console.log("texto");
 
   const countWords = analyzer.getWordCount(text);
 
-  if(countWords === 0){
+  if (countWords === 0) {
 
     wordMostrar.innerHTML = countWords + " ";
-   
+
   }
-  else{
+  else {
 
     wordMostrar.innerHTML = countWords + " ";
   }
 
 
   //Llamar al objeto getCharacterCount
-  const countCharacter = analyzer.getCharacterCount(text); 
-  if(countCharacter === 0){
+  const countCharacter = analyzer.getCharacterCount(text);
+  if (countCharacter === 0) {
 
     characterMostrar.innerHTML = countCharacter + " ";
-   
+
   }
-  else{
+  else {
 
     characterMostrar.innerHTML = countCharacter + " ";
   }
 
   //Lamar al objeto getCharacterCountExcludingSpaces
-  const characterSpace = analyzer. getCharacterCountExcludingSpaces(text); 
-  if(characterSpace === 0){
+  const characterSpace = analyzer.getCharacterCountExcludingSpaces(text);
+  if (characterSpace === 0) {
 
     characterSinEspacioMostrar.innerHTML = characterSpace + " ";
-    
+
   }
-  else{
+  else {
 
     characterSinEspacioMostrar.innerHTML = characterSpace + " ";
   }
 
-    //Lalmar al objeto getAverageWordLength
-  const lengthWords = analyzer.getAverageWordLength(text); 
-  if(lengthWords === 0){
+  //Llamar al elemento getNumberCount
+  const numberCount = analyzer.getNumberCount(text);
+  if (numberCount === 0) {
 
-    wordLengthMostrar.innerHTML = lengthWords  + " ";
-    
+    numMostrar.innerHTML = numberCount + " ";
+
   }
-  else{
+  else {
 
-    wordLengthMostrar.innerHTML = lengthWords  + " ";
-  }
-
-//Llamar al elemento getNumberCount
-  const numberCount = analyzer. getNumberCount(text); 
-  if(numberCount=== 0){
-
-    numMostrar .innerHTML = numberCount + " ";
-    
-  }
-  else{
-
-    numMostrar .innerHTML = numberCount + " ";
+    numMostrar.innerHTML = numberCount + " ";
   }
 
   //Llamar al objeto getNumberCount
-  const sumNumber = analyzer.getNumberSum(text); 
-  if(sumNumber === 0){
+  const sumNumber = analyzer.getNumberSum(text);
+  if (sumNumber === 0) {
 
-    sumMostrar.innerHTML = sumNumber  + " ";
-    
+    sumMostrar.innerHTML = sumNumber + " ";
+
   }
-  else{
+  else {
 
-    sumMostrar.innerHTML = sumNumber  + " ";
+    sumMostrar.innerHTML = sumNumber + " ";
+  }
+
+  //Lalmar al objeto getAverageWordLength
+  const lengthWords = analyzer.getAverageWordLength(text);
+  if (lengthWords === 0) {
+
+    wordLengthMostrar.innerHTML = lengthWords + " ";
+
+  }
+  else {
+
+    wordLengthMostrar.innerHTML = lengthWords + " ";
   }
 
 
