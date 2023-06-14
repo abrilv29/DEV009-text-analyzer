@@ -24,15 +24,15 @@ const analyzer = {
   getAverageWordLength: (text) => {
     //TODO: esta función debe retornar la longitud media de palabras que se encuentran en el parámetro `text` de tipo `string`.
     let totalLength = 0;
-    const words = text.trim().split(/\s+/);
-    if (words.length === 0) {
+    const wordsLength = text.trim().split(/\s+/);
+    if (wordsLength.length === 0) {
       return 0;
     }
-    for (let i = 0; i < words.length; i++) {
-      totalLength = totalLength + words[i].length;
+    for (let i = 0; i < wordsLength.length; i++) {
+      totalLength = totalLength + wordsLength[i].length;
     }
-    const average = totalLength / words.length;
-    // Round to two decimal places
+    const average = totalLength / wordsLength.length;
+    // Convertir numero a decimal y solo mostrar dos decimales
     return parseFloat(average.toFixed(2));
   },
 
