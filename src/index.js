@@ -26,7 +26,8 @@ function limpiarBtn() {
   characterMostrar.innerHTML = ' ';
   characterSinEspacioMostrar.innerHTML = '';
   numMostrar.innerHTML = '';
-
+  sumMostrar.innerHTML = '';
+  wordLengthMostrar.innerHTML = '';
 }
 //Llamar al objeto getWordCount
 textArea.addEventListener("keyup", function () {
