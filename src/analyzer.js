@@ -9,7 +9,7 @@ const analyzer = {
   },
   getCharacterCount: (text) => {
     //TODO: esta función debe retornar el recuento de caracteres que se encuentran en el parámetro `text` de tipo `string`.
-    return text.length;
+    return text.length; //muestra la longitud de la cadena de texto
 
   },
   getCharacterCountExcludingSpaces: (text) => {
@@ -23,12 +23,12 @@ const analyzer = {
   },
   getAverageWordLength: (text) => {
     //TODO: esta función debe retornar la longitud media de palabras que se encuentran en el parámetro `text` de tipo `string`.
-    let totalLength = 0;
+    let totalLength = 0; // variable donse se almacena el valor total de la longitud 
     const wordsLength = text.trim().split(/\s+/);
     if (wordsLength.length === 0) {
       return 0;
     }
-    for (let i = 0; i < wordsLength.length; i++) {
+    for (let i = 0; i < wordsLength.length; i++) { //recorremos el arreglo e incrementamos el valos de wordsLength
       totalLength = totalLength + wordsLength[i].length;
     }
     const average = totalLength / wordsLength.length;
@@ -40,29 +40,21 @@ const analyzer = {
     //TODO: esta función debe retornar cúantos números se encuentran en el parámetro `text` de tipo `string`.
     //const numCount= text.replace(/[^0-9]+/g, "");
     //return numCount.length;
-    const numCount = text.split(' ');
-    let countNumber = 0;
-    for (let i = 0; i < numCount.length; i++) {
-      if (numCount[i] === ' ') {
-        continue;
-      }
-
-      const number = Number(numCount[i]);//convirtiendo a numero
-      if (!isNaN(number)) {
-        countNumber += 1;
+    const numCount = text.trim().split(/\s+/);
+    let countNumber = 0; //declaramos el contador en 0
+    for (let i = 0; i < numCount.length; i++) { //recorremos el arreglo
+      const number = Number(numCount[i]);//convirtiendo a número
+      if (!isNaN(number)) { //validamos el número que se número
+        countNumber += 1; // incrementamos en +1
       }
     }
-    return countNumber;
+    return countNumber; // devolvemos el valor del contador
   },
   getNumberSum: (text) => {
     //TODO: esta función debe retornar la suma de todos los números que se encuentran en el parámetro `text` de tipo `string`.
     const words = text.trim().split(/\s+/);
     let sumaNum = 0;
-    for (let i = 0; i < words.length; i++) {
-      if (words[i] === ' ') { //espacio en blanco
-        continue;
-      }
-
+    for (let i = 0; i < words.length; i++) { //
       const number = Number(words[i]);//convirtiendo a numero
       if (!isNaN(number)) {
         sumaNum += number;
