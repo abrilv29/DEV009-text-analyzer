@@ -18,7 +18,8 @@ const analyzer = {
     //split(' ').join("")
     //const space = text.split(' ').join("").replace(/,/g, "");//remplaza comas
     // replace(/\./g, '') remplaza puntos
-    const space = text.split(' ').join("").replace(/\./g, '').replace(/,/g, "");
+    // const space = text.split(' ').join("").replace(/\./g, '').replace(/,/g, "");
+    const space = text.replace(/[^\w\s]|_/g, "").replace(/\s+/gi, "");
     return space.length;
   },
   getAverageWordLength: (text) => {
@@ -66,3 +67,7 @@ const analyzer = {
 };
 
 export default analyzer;
+
+//La función global isNaN (is Not a Number) verifica si el valor que le pasamos es un número válido y 
+//podemos estar seguros de operar con dicho valor.
+// Esta función puede ser empleada inmediatamente luego de llamar a las funciones parseInt(número entero) y parseFloat(número decimal).

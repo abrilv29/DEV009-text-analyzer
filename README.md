@@ -18,7 +18,7 @@
 * textarea
 * boton para limpiar el textarea
 * lista donde muestra las métricas
-* pie de página
+* pie de página/Autor
 
 ## 2. Estilos CSS
 
@@ -26,7 +26,8 @@
 * Paleta de colores claros
 * Efecto hover en boton
 * background-image 
-* listas <li> uso de bordes
+* listas `<ul>`
+* box model para dar estilos a las listas
 
 ## 3. Funcionamiento Javascript
 
@@ -59,7 +60,7 @@ getElementById.
 **DOM**
 
 	• El querySelector()método devuelve el primer elemento que coincide con un selector CSS.
-	El getElementById()método de la Documentinterfaz devuelve un Elementobjeto que representa el elemento cuya id propiedad coincide con la cadena especificada.
+	 El getElementById()método de la Documentinterfaz devuelve un Elementobjeto que representa el elemento cuya id propiedad coincide con la cadena especificada.
 
 **Inner HTML**
 
@@ -84,21 +85,27 @@ getElementById.
 
 **Módulos de ECMAScript (Módulos ES)**
 
-	• A partir de ECMAScript se introduce una característica nativa denominada Módulos ES (ESM), que permite la importación y exportación de fragmentos de datos entre diferentes ficheros Javascript.
+	• A partir de ECMAScript se introduce una característica nativa 
+	denominada Módulos ES (ESM), que permite la importación y 
+	exportación de fragmentos de datos entre diferentes 
+	ficheros Javascript.
 	
 **Import y export**
 
-Para poder utilizar los módulos es necesario con la instalación de node.js en nuestro proyecto para que los ficheros puedan ser utilizados en otros fragmentos de código.
+Para poder utilizar los módulos es necesario con la instalación
+ de node.js en nuestro proyecto para que los ficheros puedan
+  ser utilizados en otros fragmentos de código.
 
 	• Export
-Con un export puedes exportar todo tipo de piezas de software, como datos en variables de tipos primitivos, funciones, objetos, clases
+Con un export puedes exportar todo tipo de piezas de software, 
+como datos en variables de tipos primitivos, funciones, objetos, clases.
 **Ejemplo:**
 
                        export default analyzer;
 
     
 
-• Export
+•Import
 
 En el momento que queramos cargar alguna cosa de un módulo externo, usaremos la sentencia import.
 **Ejemplo:**
@@ -125,6 +132,8 @@ Se declara una variable que almacene el valor contenido el función para mostrar
 * Configuración de la key SSH
 * Clonar repositorio DEV009-text-analyzer
 * Instalacion de Node.js
+* Correr npm rum start
+* Pruebas de desarrollo(test) playwright 
 
 ## Pruebas de criterios mínimos de aceptación
 1. npm run test:oas-html
